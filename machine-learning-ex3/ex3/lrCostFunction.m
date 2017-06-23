@@ -59,8 +59,8 @@ pause;
 
 % =============================================================
 gradPanalize = (lambda .* theta ./ m)(2:size(theta));
-grad1Left =((h - y)' * X(:,1));
-gradRestLeft =((h - y)' * X(:,2:size(X,2)));
+grad1Left =((h - y)' * X(:,1))./m;
+gradRestLeft =((h - y)' * X(:,2:size(X,2)))./m;
 
 fprintf('\nTesting panalize');
 disp(gradPanalize);
